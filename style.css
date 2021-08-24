@@ -43,8 +43,10 @@ ul {
     font-size: 20px;
 }
 
-form#featuredExercise {
+div#feature {
     float:right;
     margin-right: 1.5in;
+    font-size: 20px;
+    color: blanchedalmond;
 }
 
