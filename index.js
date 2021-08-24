@@ -44,17 +44,17 @@ searchForm.addEventListener('submit', event => {
 
 function renderFeature (obj) {
     const featureTarget = document.createElement('h3')
-    featureTarget.textContent = obj.target
+    featureTarget.textContent = obj.target.target
     const featureBox = document.getElementById('feature')
-    featureBox.append(featureTarget)
-    console.log(featureBox)
+    featureBox.appendChild(featureTarget)
+    
 
 }
 
 const li = document.querySelector('ul#fetchedData')
 li.addEventListener('click', e => {
-    const targetValue = e.target.textContent
-    const featureExercise = targetValue.replace(/\s/g, '')
+    const featureExercise = e.target.textContent
+    console.log(featureExercise)
 
     fetch(`https://exercisedb.p.rapidapi.com/exercises/name/${featureExercise}`, {
         "method" : "GET",
@@ -66,13 +66,10 @@ li.addEventListener('click', e => {
     .then(resp => resp.json())
     .then(array => {
         array.forEach(obj => {
-            if (featureExercise !== obj.target.name) {
-                renderFeature(obj);
-            }
-            else {
-                alert('Please Try Again')
+            if (featureExercise !== obj.name) {
+                renderFeature(obj)
             }
         })
-        
-})
+    })
+            
 })
