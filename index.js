@@ -40,22 +40,14 @@ function renderExercises(obj) {
     })
 })
 
-function featureExercise (obj) {
-    
+const li = document.getElementsByName('li')
+
+li.addEventListener('click', e => {
+    const featureForm = document.querySelector('form#feature')
     const featureImg = document.createElement('img')
     const featureName = document.createElement('h3')
-    const featureTarget = document.createElement('p')
-    const featureEquipment = document.createElement('p')
-    const exerciseList = document.getElementsByName('li')
-
-
-    featureImg.src = obj.url
-    featureName.textContent = obj.name
-    featureTarget.textContent = obj.target
-    featureEquipment.textContent = obj.equipment
-
-    exerciseList.addEventListener('click', e => {
-        featureImg.src = obj.gif
-    })   
-
-}
+    const featureTarget = document.createElement('h4')
+    
+    featureImg.src = obj.gif
+    featureForm.append(featureImg)
+})
