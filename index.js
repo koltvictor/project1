@@ -46,7 +46,7 @@ function renderFeature (obj) {
     const featureTarget = document.createElement('h3')
     featureTarget.textContent = obj.target.target
     const featureBox = document.getElementById('feature')
-    featureBox.appendChild(featureTarget)
+    featureBox.append(featureTarget)
     
 
 }
@@ -56,20 +56,14 @@ li.addEventListener('click', e => {
     const featureExercise = e.target.textContent
     console.log(featureExercise)
 
-    fetch(`https://exercisedb.p.rapidapi.com/exercises/name/${featureExercise}`, {
-        "method" : "GET",
-        "headers" : {
+    fetch("https://exercisedb.p.rapidapi.com/exercises/name/%7Bname%7D", {
+        "method": "GET",
+        "headers": {
             "x-rapidapi-host": "exercisedb.p.rapidapi.com",
             "x-rapidapi-key": "9074bf701emsh2b8696dac91ac18p161ae0jsn7153acb84d2d"
         }
     })
-    .then(resp => resp.json())
-    .then(array => {
-        array.forEach(obj => {
-            if (featureExercise !== obj.name) {
-                renderFeature(obj)
-            }
-        })
-    })
-            
-})
+    .then(response => response.json())
+    .then(data => console.log(data))
+    })          
+
