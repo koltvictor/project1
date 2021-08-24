@@ -10,61 +10,69 @@ const searchForm = document.getElementById('search-form')
 function renderExercises(obj) {
     const newExercise = document.createElement('li')
     newExercise.textContent = obj.name
+    newExercise.id = obj.id
     list.append(newExercise)
 }
 
    
-    searchForm.addEventListener('submit', event => {
-        event.preventDefault()
-        const submitValue = event.target.search.value
-        console.log(submitValue)
+searchForm.addEventListener('submit', event => {
+    event.preventDefault()
+    const submitValue = event.target.search.value
+    console.log(submitValue)
         
-        fetch(`https://exercisedb.p.rapidapi.com/exercises/target/${submitValue}`, {
+    fetch(`https://exercisedb.p.rapidapi.com/exercises/target/${submitValue}`, {
         "method": "GET",
-           "headers": {
-               "x-rapidapi-host": "exercisedb.p.rapidapi.com",
-               "x-rapidapi-key": "9074bf701emsh2b8696dac91ac18p161ae0jsn7153acb84d2d"
-           }
-        })
-        .then(resp => resp.json())
-        .then(arr => {
-            arr.forEach(obj => {
-                if (submitValue !== obj.target.value) {
-                    renderExercises(obj);
-                }
-                else {
-                    alert('Please search again');
-                }
-                console.log(obj.length)
-     })
+        "headers": {
+            "x-rapidapi-host": "exercisedb.p.rapidapi.com",
+            "x-rapidapi-key": "9074bf701emsh2b8696dac91ac18p161ae0jsn7153acb84d2d"
+        }
+    })
+    .then(resp => resp.json())
+    .then(arr => {
+        arr.forEach(obj => {
+            if (submitValue !== obj.target.value) {
+                renderExercises(obj);
+            }
+            else {
+                alert('Please search again');
+            }
+            console.log(obj.length)
+    })
     })
 })
 
-function renderFeatured (obj) {
-    
-    const li = document.getElementsByName('li')
-    li.addEventListener('click', e =>{
-        const feature = document.getElementsByName('feature')
-        const featureTarget = document.createElement('h3')
-        const featureName = document.createElement('h4')
-        const featureGif = document.createElement('img')
-        const featureEquip = document.createElement('p')
 
-        featureTarget.textContent = obj.target
-        featureName.textContent = obj.name
-        featureGif.src = obj.gif
-        featureEquip.textContent = obj.type
+function renderFeature (obj) {
+    const featureTarget = document.createElement('h3')
+    featureTarget.textContent = obj.target
+    const featureBox = document.getElementById('feature')
+    featureBox.append(featureTarget)
+    console.log(featureBox)
 
-        feature.append(featureTarget, featureName, featureGif, featureEquip)
+}
 
-        fetch(`https://exercisedb.p.rapidapi.com/exercises/target/${submitValue}`, {
-            "method": "GET",
-               "headers": {
-                   "x-rapidapi-host": "exercisedb.p.rapidapi.com",
-                   "x-rapidapi-key": "9074bf701emsh2b8696dac91ac18p161ae0jsn7153acb84d2d"
-               }
-            })
-            .then(resp => resp.json())
-            .then(arr => console.log(arr))
-         })
+const li = document.querySelector('ul#fetchedData')
+li.addEventListener('click', e => {
+    const targetValue = e.target.textContent
+    const featureExercise = targetValue.replace(/\s/g, '')
+
+    fetch(`https://exercisedb.p.rapidapi.com/exercises/name/${featureExercise}`, {
+        "method" : "GET",
+        "headers" : {
+            "x-rapidapi-host": "exercisedb.p.rapidapi.com",
+            "x-rapidapi-key": "9074bf701emsh2b8696dac91ac18p161ae0jsn7153acb84d2d"
         }
+    })
+    .then(resp => resp.json())
+    .then(array => {
+        array.forEach(obj => {
+            if (featureExercise !== obj.target.name) {
+                renderFeature(obj);
+            }
+            else {
+                alert('Please Try Again')
+            }
+        })
+        
+})
+})
