@@ -28,15 +28,6 @@ p {
 
 }
 
-.container {
-
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: space-between;
-
-}
-
 form#search-form {
 
     text-align: center;
@@ -50,9 +41,12 @@ form.button:hover {
 
 }
 
-h3 {
+.container {
 
-    text-align: center;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
 
 }
 
@@ -105,10 +99,12 @@ div#feature {
 }
 
 img {
+
     display: block;
     margin-left: auto;
     margin-right: auto;
     width: 50%;
+
 }
 
 div#feature button {
@@ -162,8 +158,6 @@ div#feature button:hover {
 
 }
 
-
-
 div#feature button {
 
     display: block;
@@ -172,7 +166,6 @@ div#feature button {
     width: 40%;
 
 }
-  
   
 #myRoutine {
 
@@ -217,22 +210,21 @@ div#feature button {
     text-transform: uppercase;
     font-family: 'Montserrat', sans-serif;
     font-weight: 700;
-  }
+}
   
   #myRoutine button:hover, .btn:focus {
     color: #fff;
     outline: 0;
-  }
+}
   
   #myRoutine button {
     -webkit-transition: box-shadow 300ms ease-in-out, color 300ms ease-in-out;
     transition: box-shadow 300ms ease-in-out, color 300ms ease-in-out;
-  }
+}
+
   #myRoutine button:hover {
     box-shadow: 0 0 40px 40px rgb(42, 44, 46) inset;
-  }
-
-
+}
 
 #myRoutine button {
 
@@ -242,3 +234,4 @@ div#feature button {
     width: 40%;
 
 }
+
