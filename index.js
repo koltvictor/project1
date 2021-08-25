@@ -16,16 +16,21 @@ function renderExercises(obj) {
    
 searchForm.addEventListener('submit', event => {
     event.preventDefault()
+
+    while (list.firstChild) {
+        list.removeChild(list.firstChild);
+    }
+
     const submitValue = event.target.search.value
     console.log(submitValue)
-        
-    fetch(`https://exercisedb.p.rapidapi.com/exercises/target/${submitValue}`, {
-        "method": "GET",
-        "headers": {
-            "x-rapidapi-host": "exercisedb.p.rapidapi.com",
-            "x-rapidapi-key": "9074bf701emsh2b8696dac91ac18p161ae0jsn7153acb84d2d"
-        }
-    })
+
+fetch(`https://exercisedb.p.rapidapi.com/exercises/target/${submitValue}`, {
+    "method": "GET",
+       "headers": {
+           "x-rapidapi-host": "exercisedb.p.rapidapi.com",
+           "x-rapidapi-key": "9074bf701emsh2b8696dac91ac18p161ae0jsn7153acb84d2d"
+       }
+    })   
     .then(resp => resp.json())
     .then(arr => {
         arr.forEach(obj => {
@@ -33,13 +38,14 @@ searchForm.addEventListener('submit', event => {
                 renderExercises(obj);
             }
             else {
-                alert('Please search again');
+                alert('No exercises found! Please search again!');
             }
             console.log(obj.length)
             searchForm.reset()
-    })
-    })
+ })
 })
+})
+
 
 
 const li = document.querySelector('ul#fetchedData')
