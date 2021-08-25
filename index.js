@@ -94,7 +94,6 @@ li.addEventListener('click', e => {
 
                 const xBtn = document.createElement('button')
                 xBtn.innerHTML = "Remove"
-                // const routineList = document.querySelector('li#routineList')
                 newEx.append(xBtn)
 
                 xBtn.addEventListener('click', e => {
@@ -106,4 +105,18 @@ li.addEventListener('click', e => {
         })
     })
 })
+})
+
+const routineBox = document.getElementById('myRoutine')
+console.log(routineBox)
+
+const favourite = document.createElement('button')
+favourite.id = "favouriteBtn"
+favourite.innerHTML = "SAVE"
+routineBox.append(favourite)
+
+favourite.addEventListener('click', e=> {
+    const favouriteBox = document.getElementsByClassName('favourites')
+    const favourited = document.createElement('li')
+    favourited.textContent
 })

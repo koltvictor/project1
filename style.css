@@ -96,6 +96,7 @@ div#feature {
     padding: 10px;
     width: 800px;
     border-radius: .5em;
+    text-align: center;
 
 }
 
@@ -183,6 +184,11 @@ div#feature button {
     border-radius: .5em;
     text-align: center;
 
+}
+
+#favouriteBtn {
+    position: relative;
+    top: 1px;
 }
 
 #myRoutine button {
