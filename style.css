@@ -54,3 +54,7 @@ div#myRoutine {
     float: right;
     margin-right: 2in;
 }
+
+btn {
+    position:relative;
+}

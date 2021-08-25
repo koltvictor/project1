@@ -83,8 +83,19 @@ li.addEventListener('click', e => {
                 const routine = document.getElementById('myRoutine')
                 const newEx = document.createElement('li')
                 newEx.textContent = obj.name
+                newEx.id = "routineList"
                 routine.append(newEx)
+
+                const routineList = document.querySelector('routineList')
+                xBtn = document.createElement('button')
+                btn.innerHTML = "x"
+                routineList.append(btn)
+                xBtn.addEventListener('click', e => {
+                    
+                })
             })
+
+
 
         })
     })
