@@ -1,4 +1,3 @@
-// JS GOES HERE //
 
 const APIURL = "https://exercisedb.p.rapidapi.com/exercises"
 
@@ -37,6 +36,7 @@ searchForm.addEventListener('submit', event => {
                 alert('Please search again');
             }
             console.log(obj.length)
+            searchForm.reset()
     })
     })
 })

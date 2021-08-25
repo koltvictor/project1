@@ -1,75 +1,112 @@
-/* style.css */
-
 
 body {
+
     font-family: Noah, Arial, sans-serif;
     background-image: url('basketball-1920x1080.png');
     
 }
 
-#welcome {
-    border: 5px solid black;
-}
-
-.center {
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    width: 75%;
-  }
-
 h1 {
+
     text-align: center;  
     background-color: rgb(42, 44, 46);
     color: burlywood;
     font-size: 50px;
-}
-form#search-form {
-    text-align: center;
-    font-size: 48px;
-}
 
-h3 {
-    text-align: center;
 }
 
 p {
+
     font-size: 22px;
     text-indent:0.5in;
     text-align: justify;
     margin-left: .5in;
     margin-right: .5in;
     background-color: rgba(198, 88, 48, .65);
+    border: 5px solid rgb(42, 44, 46);
+    padding: 10px;
+
+}
+
+/* .container {
+
+    display:grid;
+    grid-template-columns: 1fr 1fr 1fr;
+
+} */
+
+form#search-form {
+
+    text-align: center;
+    font-size: 48px;
+
+}
+
+form.button:hover {
+
+    box-shadow: 0 8px 16px 0 rgba(1,1,1,.385);
+
+}
+
+h3 {
+
+    text-align: center;
+
 }
 
 ul {
 
     float: left;
+    width: 25%;
+    height: 280 px;
     color: blanchedalmond;
     font-size: 24px;
+    padding: 10px;
+    width: 500px;
+    border: 5px solid rgb(42, 44, 46);
+    border-radius: .5em;
+
+}
+
+ul li {
+
+    padding-left: 10px;
+    text-indent: .25in;
+
+}
+
+ul li:hover {
+
+    box-shadow: 0 8px 16px 0 rgba(1,1,1,.385);
+    line-height: 20px;
+    padding: 10px;
+
 }
 
 div#feature {
-    float:right;
-    margin-right: 1.5in;
+
+    float: left;
     font-size: 20px;
     color: blanchedalmond;
     background-color: rgba(198,88,48,.65);
-    border: 5px solid black;
+    border: 5px solid rgb(42, 44, 46);
+    padding: 10px;
+
 }
 
-div#myRoutine {
+#myRoutine {
 
+    float: right;
+    width: 25%;
+    height: 280px;
     color:blanchedalmond;
     font-size: 24px;
     font-weight: bold;
-}
+    border: 5px solid rgb(42, 44, 46);
+    padding: 10px;
+    width: 500px;
+    border-radius: .5em;
 
-div#myRoutine.img {
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    width: 50%;
 }
 
 
