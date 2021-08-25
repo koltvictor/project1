@@ -64,7 +64,7 @@ li.addEventListener('click', e => {
     .then(arr => {
         arr.forEach(obj => {
             const featureBox = document.getElementById('feature')
-            
+            featureBox.innerHTML = ""
             const featureImg = document.createElement('img')
             featureImg.src = obj.gifUrl
             featureBox.append(featureImg)
@@ -74,7 +74,7 @@ li.addEventListener('click', e => {
             featureBox.append(featureTarget)
 
             const featureName = document.createElement('h3')
-            featureName.textContent = "Exercise name: " + obj.name
+            featureName.textContent = "Exercise: " + obj.name
             featureBox.append(featureName)
 
             const featureEquip = document.createElement('h3')
@@ -82,7 +82,7 @@ li.addEventListener('click', e => {
             featureBox.append(featureEquip)
 
             let btn = document.createElement('button')
-            btn.innerHTML = "Add to My Routine"
+            btn.innerHTML = "Add to Routine"
             featureBox.appendChild(btn)
 
             btn.addEventListener('click', e => {
