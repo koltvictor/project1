@@ -108,7 +108,6 @@ li.addEventListener('click', e => {
 })
 
 const routineBox = document.getElementById('myRoutine')
-console.log(routineBox)
 
 const favourite = document.createElement('button')
 favourite.id = "favouriteBtn"
@@ -116,7 +115,9 @@ favourite.innerHTML = "SAVE"
 routineBox.append(favourite)
 
 favourite.addEventListener('click', e=> {
-    const favouriteBox = document.getElementsByClassName('favourites')
+    const favouriteBox = document.querySelector('div.favourites')
     const favourited = document.createElement('li')
-    favourited.textContent
+    favouriteBox.append(favourited)
+    favourited.textContent = document.getElementsByName('myRoutine')
+    console.log(favouriteBox)
 })
