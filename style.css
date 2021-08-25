@@ -8,7 +8,7 @@ body {
 }
 
 #welcome {
-    font-weight: bold;
+    border: 5px solid black;
 }
 
 .center {
@@ -22,6 +22,11 @@ h1 {
     text-align: center;  
     background-color: rgb(42, 44, 46);
     color: burlywood;
+    font-size: 50px;
+}
+form#search-form {
+    text-align: center;
+    font-size: 48px;
 }
 
 h3 {
@@ -38,9 +43,10 @@ p {
 }
 
 ul {
+
     float: left;
     color: blanchedalmond;
-    font-size: 20px;
+    font-size: 24px;
 }
 
 div#feature {
@@ -48,13 +54,22 @@ div#feature {
     margin-right: 1.5in;
     font-size: 20px;
     color: blanchedalmond;
+    background-color: rgba(198,88,48,.65);
+    border: 5px solid black;
 }
 
 div#myRoutine {
-    float: right;
-    margin-right: 2in;
+
+    color:blanchedalmond;
+    font-size: 24px;
+    font-weight: bold;
 }
 
-btn {
-    position:relative;
+div#myRoutine.img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
 }
+
+

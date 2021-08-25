@@ -90,16 +90,8 @@ li.addEventListener('click', e => {
                 xBtn = document.createElement('button')
                 btn.innerHTML = "x"
                 routineList.append(btn)
-                xBtn.addEventListener('click', e => {
-                    
-                })
-            })
-
-
 
         })
     })
-
-    
-    })          
-
+})
+})
