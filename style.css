@@ -55,7 +55,7 @@ h3 {
 }
 
 ul {
-
+    position: sticky;
     float: left;
     width: 25%;
     height: 280 px;

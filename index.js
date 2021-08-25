@@ -92,10 +92,16 @@ li.addEventListener('click', e => {
                 newEx.id = "routineList"
                 routine.append(newEx)
 
-                const routineList = document.querySelector('routineList')
-                xBtn = document.createElement('button')
-                btn.innerHTML = "x"
-                routineList.append(btn)
+                const xBtn = document.createElement('button')
+                xBtn.innerHTML = "Remove"
+                const routineList = document.querySelector('li#routineList')
+                routineList.append(xBtn)
+
+                xBtn.addEventListener('click', e => {
+                    routineList.remove(e.target.parentElement)
+                })
+
+
 
         })
     })
