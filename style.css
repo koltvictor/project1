@@ -63,6 +63,7 @@ ul {
     padding: 10px;
     width: 800px;
     border-radius: .5em;
+    text-align: center;
 
 }
 
@@ -180,6 +181,7 @@ div#feature button {
     padding: 10px;
     width: 800px;
     border-radius: .5em;
+    text-align: center;
 
 }
 
@@ -212,17 +214,17 @@ div#feature button {
     font-weight: 700;
 }
   
-  #myRoutine button:hover, .btn:focus {
+#myRoutine button:hover, .btn:focus {
     color: #fff;
     outline: 0;
 }
   
-  #myRoutine button {
+#myRoutine button {
     -webkit-transition: box-shadow 300ms ease-in-out, color 300ms ease-in-out;
     transition: box-shadow 300ms ease-in-out, color 300ms ease-in-out;
 }
 
-  #myRoutine button:hover {
+#myRoutine button:hover {
     box-shadow: 0 0 40px 40px rgb(42, 44, 46) inset;
 }
 
@@ -235,3 +237,19 @@ div#feature button {
 
 }
 
+.favourites {
+    
+    box-sizing: border-box;
+    margin: 10px 10px 0 0;
+    outline: 1px dotted red;
+    width: calc(100% - (1 - 1/2)*10px);
+    height: 500px;
+    color:blanchedalmond;
+    background-color: rgba(198,88,48,.65);
+    font-size: 24px;
+    border: 5px solid rgb(42, 44, 46);
+    padding: 10px;
+    border-radius: .5em;
+    text-align: center;
+
+}
