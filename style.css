@@ -24,8 +24,8 @@ h1 {
     color: burlywood;
 }
 
-h2 {
-    font-size: 15px;
+h3 {
+    text-align: center;
 }
 
 p {
@@ -50,3 +50,7 @@ div#feature {
     color: blanchedalmond;
 }
 
+div#myRoutine {
+    float: right;
+    margin-right: 2in;
+}

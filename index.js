@@ -42,21 +42,12 @@ searchForm.addEventListener('submit', event => {
 })
 
 
-function renderFeature (obj) {
-    const featureTarget = document.createElement('h3')
-    featureTarget.textContent = obj.target.target
-    const featureBox = document.getElementById('feature')
-    featureBox.append(featureTarget)
-    
-
-}
-
 const li = document.querySelector('ul#fetchedData')
 li.addEventListener('click', e => {
     const featureExercise = e.target.textContent
     console.log(featureExercise)
 
-    fetch("https://exercisedb.p.rapidapi.com/exercises/name/%7Bname%7D", {
+    fetch(`https://exercisedb.p.rapidapi.com/exercises/name/${featureExercise}`, {
         "method": "GET",
         "headers": {
             "x-rapidapi-host": "exercisedb.p.rapidapi.com",
@@ -64,6 +55,40 @@ li.addEventListener('click', e => {
         }
     })
     .then(response => response.json())
-    .then(data => console.log(data))
+    .then(arr => {
+        arr.forEach(obj => {
+            const featureBox = document.getElementById('feature')
+            
+            const featureImg = document.createElement('img')
+            featureImg.src = obj.gifUrl
+            featureBox.append(featureImg)
+
+            const featureTarget = document.createElement('h3')
+            featureTarget.textContent = "Target muscle group: " + obj.target
+            featureBox.append(featureTarget)
+
+            const featureName = document.createElement('h3')
+            featureName.textContent = "Exercise name: " + obj.name
+            featureBox.append(featureName)
+
+            const featureEquip = document.createElement('h3')
+            featureEquip.textContent = "Equipment: " + obj.equipment
+            featureBox.append(featureEquip)
+
+            let btn = document.createElement('button')
+            btn.innerHTML = "Add to My Routine"
+            featureBox.appendChild(btn)
+
+            btn.addEventListener('click', e => {
+                const routine = document.getElementById('myRoutine')
+                const newEx = document.createElement('li')
+                newEx.textContent = obj.name
+                routine.append(newEx)
+            })
+
+        })
+    })
+
+    
     })          
 
