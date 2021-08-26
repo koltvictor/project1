@@ -16,10 +16,14 @@
 
     <br>
     
-    <form id='search-form'>
-        <input type="text" placeholder="Search ..." name="search">
-        <button id ="submitButton" type="submit">Search Exercises</button>
-        </form>
+    <div id="instructions">Select a target muscle group:</div>
+    
+    <form action="action_form.php" method="get" id="search-form">
+      <input id="dataList" type="text" list="exercises">  
+      <datalist id="exercises">CLICK HERE
+      </datalist>
+      <input type="submit" value="Get Exercises!" id="search-button">
+    </form>
     
     <br>
     <br>
@@ -30,14 +34,11 @@
     
        <div id="feature"></div>
 
-       <div id="myRoutine" style="height:700px;width:450px;overflow:auto;padding:2%">MY ROUTINE</div>
-   
+       <ul id="myRoutine" style="height:700px;width:450px;overflow:auto;padding:2%">MY ROUTINE</ul>
+       
+       <div class="favourites">FAVOURITES</div>
 
-
-    <div class="favourites"><h3>FAVOURITES</h3></div>
-    
-    </div>
-
+      </div>
 
 </body>
 
@@ -48,3 +49,5 @@
 
 
 </html>
+
+
