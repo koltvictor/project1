@@ -35,8 +35,6 @@ p {
     font-weight: 700;
 }
 
-
-
 input#dataList {
     
     background-color: rgba(218, 92, 47, 0.863);
@@ -47,6 +45,8 @@ input#dataList {
     border: .3vw solid rgb(42, 44, 46);
 
 }
+
+
 input#search-button {
 
     box-sizing: border-box;
@@ -145,14 +145,14 @@ ul {
 
 }
 
-ul li {
+ul#fetchedData li {
 
     padding-left: .6vw;
     text-align: left;
 
 }
 
-ul li:hover {
+ul#fetchedData li:hover {
 
     box-shadow: 0 .6vw 1vw 0 rgba(1,1,1,.385);
     box-sizing: border-box;
