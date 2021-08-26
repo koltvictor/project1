@@ -12,7 +12,6 @@ function renderExercises(obj) {
     newExercise.id = obj.id
     list.append(newExercise)
 }
-
    
 searchForm.addEventListener('submit', event => {
     event.preventDefault()
@@ -46,9 +45,8 @@ fetch(`https://exercisedb.p.rapidapi.com/exercises/target/${submitValue}`, {
 })
 })
 
-
-
 const li = document.querySelector('ul#fetchedData')
+
 li.addEventListener('click', e => {
     const featureExercise = e.target.textContent
     console.log(featureExercise)
@@ -70,15 +68,15 @@ li.addEventListener('click', e => {
             featureBox.append(featureImg)
 
             const featureTarget = document.createElement('h3')
-            featureTarget.textContent = "Target muscle group: " + obj.target
+            featureTarget.textContent = "Target muscle group:  " + obj.target
             featureBox.append(featureTarget)
 
             const featureName = document.createElement('h3')
-            featureName.textContent = "Exercise: " + obj.name
+            featureName.textContent = "Exercise:  " + obj.name
             featureBox.append(featureName)
 
             const featureEquip = document.createElement('h3')
-            featureEquip.textContent = "Equipment: " + obj.equipment
+            featureEquip.textContent = "Equipment:  " + obj.equipment
             featureBox.append(featureEquip)
 
             let btn = document.createElement('button')
@@ -117,7 +115,11 @@ routineBox.append(favourite)
 favourite.addEventListener('click', e=> {
     const favouriteBox = document.querySelector('div.favourites')
     const favourited = document.createElement('li')
-    favouriteBox.append(favourited)
-    favourited.textContent = document.getElementsByName('myRoutine')
-    console.log(favouriteBox)
+    const listedItems = document.querySelectorAll('#myRoutine li')
+    // let listArray = []
+    for (let i=0; i<listedItems.length; i++){
+        favouriteBox.appendChild(listedItems[i])
+    }
 })
+
+
